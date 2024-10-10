@@ -32,8 +32,17 @@ function countDown() {
         playSound("winner");
         setTimeout(() => {
 
-            alert("Game Over! o seu resultado foi: " + state.values.result);
-        }, 1000)
+            const continuar = confirm("Game Over! o seu resultado foi: " + state.values.result + `\n\nCONTINUAR?`);
+
+            if (continuar == true) {
+
+                window.location.reload(true);
+
+            } else {
+                window.location.href = "https://www.obrigadopelospeixes.com/wp-content/uploads/2016/01/Wreck-It-Ralph-Disney-movie-2012_1920x1080.jpg"
+            }
+        }, 1000);
+
     }
 }
 
@@ -62,31 +71,39 @@ function addListenerHitBox() {
         square.addEventListener('mousedown', () => {
 
             if (square.id === state.values.hitPosition) {
-                
+
                 state.values.result++;
                 state.view.score.textContent = state.values.result;
                 state.values.hitPosition = null;
                 playSound("hit");
             } else {
 
-                
+
                 state.values.result--;
                 state.view.score.textContent = state.values.result;
                 state.values.hitPosition = null;
                 state.values.countLife--;
                 state.view.lifes.textContent = state.values.countLife;
                 playSound("error");
-                
+
                 if (state.values.countLife == 0) {
-                    
+
                     clearInterval(state.actions.countDownTimerId);
                     clearInterval(state.actions.timerId);
-    
+
                     playSound("game-over");
                     setTimeout(() => {
-    
-                        alert("Game Over! o seu resultado foi: " + state.values.result);
-                    }, 1000)
+
+                        const continuar = confirm("Game Over! o seu resultado foi: " + state.values.result + `\n\nCONTINUAR?`);
+
+                        if (continuar == true) {
+
+                            window.location.reload(true);
+
+                        } else {
+                            window.location.href = "https://www.obrigadopelospeixes.com/wp-content/uploads/2016/01/Wreck-It-Ralph-Disney-movie-2012_1920x1080.jpg"
+                        }
+                    }, 1000);
                 }
             }
         })
