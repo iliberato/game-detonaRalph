@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('../images/fundo2.png') center no-repeat, url("../images/wall.png");
+    position: relative;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 5.625rem;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    border-bottom: 5px solid #ffd700;
+    position: absolute;
+    top: 0;
+}
+
+.menu-time h2:nth-child(2), .menu-score h2:nth-child(2) {
+    margin-top: 1rem;
+}
+
+.menu-lives {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel {
+    margin-top: 1rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+
+.square {
+    height: 150px;
+    width: 150px;
+    border: 1px solid #000;
+    background-color: #75977cd8;
+    cursor: pointer;
+    margin: 1rem;
+    border-radius: 8px;
+}
+
+.enemy {
+    background: url("../images/ralph.png"), #75977c;
+    background-size: cover;
+}
